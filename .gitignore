@@ -1,0 +1,12 @@
+# Ignorar o JDK local
+oracleJdk-27/
+**/oracleJdk-27/
+
+# Ignorar arquivos compilados do Maven
+target/
+**/target/
+
+# Ignorar configurações locais de IDE
+.vscode/
+.idea/
+*.iml
