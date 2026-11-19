@@ -112,4 +112,3 @@ mvn clean package
 
 *Controles*
 `ESC` ou fechar a janela (`X`): encerra a cena atual e retorna ao menu principal (quando aberto pelo `MenuPrincipal`).
->>>>>>> origin/develop
