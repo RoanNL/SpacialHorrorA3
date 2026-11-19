@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# SpacialHorrorA3
-=======
 # SpacialHorrorA3
 
 **Alunos:** 
