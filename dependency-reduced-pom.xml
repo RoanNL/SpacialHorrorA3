@@ -19,7 +19,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>com.SpacialHorrorA3.Principal</mainClass>
+              <mainClass>com.SpacialHorrorA3.MenuPrincipal</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -36,7 +36,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>com.SpacialHorrorA3.Principal</mainClass>
+                  <mainClass>com.SpacialHorrorA3.MenuPrincipal</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -48,7 +48,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.1.0</version>
         <configuration>
-          <mainClass>com.SpacialHorrorA3.Principal</mainClass>
+          <mainClass>com.SpacialHorrorA3.MenuPrincipal</mainClass>
         </configuration>
       </plugin>
     </plugins>

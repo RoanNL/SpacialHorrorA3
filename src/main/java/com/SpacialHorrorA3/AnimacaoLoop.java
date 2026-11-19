@@ -14,8 +14,7 @@ import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 
 /**
- * Animação em loop "Spacial Horror" (não altera nenhuma classe original do projeto:
- * usa o OBJLoader e o GerenciadorShaders como estão, com shaders próprios).
+ * Animação em loop "Spacial Horror" *
  *
  *  1. Um buraco de hiperespaço se abre e a nave sai dele, num sistema solar.
  *  2. A nave passa pelos três planetas (bem maiores que ela) e para diante do Sol, maior que todos.
