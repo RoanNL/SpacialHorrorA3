@@ -205,7 +205,7 @@ void main() {
     }
 
     // ---------------- Modo 2: criatura abissal ----------------
-    // 1. Holofote (spotlight) vindo da nave
+    //  Holofote (spotlight) vindo da nave
     vec3 vetorParaLuz = posicaoLuzNave - posicaoMundo;
     float distanciaLuz = length(vetorParaLuz);
     vec3 dirLuz = normalize(vetorParaLuz);
@@ -222,7 +222,7 @@ void main() {
     float especular = pow(max(dot(norm, meiaVista), 0.0), 28.0) * intensidadeCone * atenuacao * intensidadeFarol;
     vec3 brilhoUmido = vec3(0.55, 0.95, 0.92) * especular * 0.9;
 
-    // 2. Fresnel: contorno ciano abissal + contraluz quando o Sol está atrás da criatura
+    // Fresnel: contorno ciano abissal + contraluz quando o Sol está atrás da criatura
     float fresnel = pow(1.0 - max(dot(norm, dirVisao), 0.0), 3.0);
     float contraLuz = pow(max(dot(-dirVisao, dirSol), 0.0), 2.0);
     vec3 luzBorda = vec3(0.10, 0.55, 0.65) * fresnel * 0.40
@@ -232,7 +232,7 @@ void main() {
     float difusaSol = max(dot(norm, dirSol), 0.0);
     vec3 luzSol = corSol * intensidadeSol * difusaSol * 0.30;
 
-    // 3. Pontos bioluminescentes ao longo do corpo e nas pontas das nadadeiras
+    // Pontos bioluminescentes ao longo do corpo e nas pontas das nadadeiras
     float bioluminescencia = 0.0;
     if (posicaoLocal.z > -24.0 && posicaoLocal.z < 10.2 && abs(posicaoLocal.x) > 0.65) {
         float celulaZ = round(posicaoLocal.z / 2.1) * 2.1;
@@ -256,7 +256,7 @@ void main() {
     vec3 corBio = mix(vec3(0.25, 0.92, 1.00), vec3(1.00, 0.70, 0.25), clamp(energiaAbsorvida, 0.0, 1.0));
     vec3 corBiolum = corBio * clamp(bioluminescencia, 0.0, 1.2) * pulso * (1.0 + energiaAbsorvida * 2.0);
 
-    // 4. Combinação final
+    // Combinação final
     float luzAmbienteSuave = 0.10 + 0.08 * max(norm.y, 0.0);
     vec3 corFinal = corVertice * (vec3(luzAmbienteSuave) + luzHolofote + luzSol) + brilhoUmido + luzBorda + corBiolum;
     corFinal += vec3(0.75, 0.90, 1.00) * brilhoFormacao * 1.6;  // poeira de estrelas na borda

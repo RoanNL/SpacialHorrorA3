@@ -163,8 +163,8 @@ public class OBJLoader {
     }
 
     private static void adicionarVertice(String tokenVertice, List<Float> verticesTemp, List<Float> normaisTemp,
-                                         float[] corBase, String materialAtual, String objetoAtual,
-                                         boolean ehMonstro, List<Float> dadosFinais) {
+                                        float[] corBase, String materialAtual, String objetoAtual,
+                                        boolean ehMonstro, List<Float> dadosFinais) {
         String[] partes = tokenVertice.split("/");
         int idxVertice = Integer.parseInt(partes[0]) - 1;
 
@@ -252,7 +252,6 @@ public class OBJLoader {
                 if (tokens[0].equals("newmtl") && tokens.length > 1) {
                     matAtual = tokens[1];
                 } else if (tokens[0].equals("Kd") && matAtual != null) {
-                    // Só sobrescreve se ainda não tivermos definido uma cor customizada no mapa
                     mapaCores.putIfAbsent(matAtual, new float[]{
                         Float.parseFloat(tokens[1]),
                         Float.parseFloat(tokens[2]),

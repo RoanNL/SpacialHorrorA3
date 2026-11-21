@@ -46,8 +46,8 @@ void main() {
         return;
     }
 
-    // Modo 2: Shader Abissal da Criatura (inspirado na arte de referência)
-    // 1. Cálculo do holofote (Spotlight) vindo da nave
+    // Modo 2: Shader da Criatura
+    // Cálculo do holofote (Spotlight) vindo da nave
     vec3 vetorParaLuz = posicaoLuzNave - posicaoMundo;
     float distanciaLuz = length(vetorParaLuz);
     vec3 dirLuz = normalize(vetorParaLuz);
@@ -64,11 +64,11 @@ void main() {
     float especular = pow(max(dot(norm, meiaVista), 0.0), 28.0) * intensidadeCone * atenuacao;
     vec3 brilhoUmido = vec3(0.55, 0.95, 0.92) * especular * 0.9;
 
-    // 2. Efeito Fresnel (contorno ciano abissal nas bordas da silhueta)
+    // Efeito Fresnel (contorno ciano abissal nas bordas da silhueta)
     float fresnel = pow(1.0 - max(dot(norm, dirVisao), 0.0), 3.0);
     vec3 luzBorda = vec3(0.10, 0.55, 0.65) * fresnel * 0.55;
 
-    // 3. Pontos bioluminescentes ciano ao longo da lateral do corpo e pontas das nadadeiras
+    // Pontos bioluminescentes ciano ao longo da lateral do corpo e pontas das nadadeiras
     float bioluminescencia = 0.0;
     if (posicaoLocal.z > -24.0 && posicaoLocal.z < 10.2 && abs(posicaoLocal.x) > 0.65) {
         // Fileira de pontos luminosos acompanhando a curvatura do pescoço e tronco
@@ -93,7 +93,7 @@ void main() {
 
     vec3 corBiolum = vec3(0.25, 0.92, 1.00) * clamp(bioluminescencia, 0.0, 1.2);
 
-    // 4. Combinação final (ambiente escuro do espaço + holofote da nave + bioluminescência)
+    // Combinação final (ambiente escuro do espaço + holofote da nave + bioluminescência)
     float luzAmbienteSuave = 0.12 + 0.10 * max(norm.y, 0.0);
     vec3 corFinal = corVertice * (vec3(luzAmbienteSuave) + luzHolofote) + brilhoUmido + luzBorda + corBiolum;
 

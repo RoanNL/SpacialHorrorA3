@@ -47,7 +47,7 @@ public class Renderizador implements GLEventListener {
         vaoPlaneta2 = vaos[6]; vboPlaneta2 = vbos[6];
         vaoPlaneta3 = vaos[7]; vboPlaneta3 = vbos[7];
 
-        // Carrega a Nave
+        // carrega a Nave
         qtdVerticesNave = carregarBufferModelo(gl, vaoNave, vboNave, "Nave_01.obj", new float[]{0.8f, 0.8f, 0.8f});
 
         // Carrega o Monstro
@@ -230,7 +230,7 @@ public class Renderizador implements GLEventListener {
 
         gl.glDrawArrays(GL4.GL_POINTS, 0, qtdEstrelas);
 
-        // --- SISTEMA PLANETÁRIO AO FUNDO (Modo 1: Iluminação difusa + Emissão para Sol/Lava) ---
+        // --- SISTEMA PLANETÁRIO AO FUNDO ---
         gl.glUniform1i(locIluminacao, 1);
 
         // Posição base do Sol distante ao fundo à esquerda/topo
