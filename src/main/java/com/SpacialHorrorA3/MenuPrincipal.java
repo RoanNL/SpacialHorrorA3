@@ -64,12 +64,12 @@ public class MenuPrincipal {
         painelTopo.setLayout(new BoxLayout(painelTopo, BoxLayout.Y_AXIS));
         painelTopo.setBackground(COR_FUNDO);
 
-        JLabel titulo = new JLabel("SPACIAL HORROR 3D");
+        JLabel titulo = new JLabel("SPACIAL HORROR A3");
         titulo.setFont(new Font("Segoe UI", Font.BOLD, 28));
         titulo.setForeground(COR_CIANO);
         titulo.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JLabel subtitulo = new JLabel("Escolha qual cena deseja visualizar em OpenGL 4.0");
+        JLabel subtitulo = new JLabel("Escolha qual cena deseja visualizar!!");
         subtitulo.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         subtitulo.setForeground(COR_SUBTEXTO);
         subtitulo.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -84,17 +84,17 @@ public class MenuPrincipal {
 
         JButton btnOriginal = criarBotaoCena(
             "Cena Estática",
-            "Encontro estático entre a nave exploradora, o holofote volumétrico, a criatura abissal e os planetas ao fundo."
+            "Cena na qual será mostrado os modelos sem movimento complexo."
         );
         btnOriginal.addActionListener(e -> abrirCena(
-            "Animação Espacial 3D — Cena Original",
+            "Cena Original",
             new Renderizador(),
             false
         ));
 
         JButton btnLoop = criarBotaoCena(
             "Animação em Loop",
-            "Curta cinematográfico em loop (67s): salto no hiperespaço, sobrevoo dos planetas, a criatura devora o Sol e a fuga."
+            "Curta em loop (67s): salto no hiperespaço, sobrevoo dos planetas, a criatura devora o Sol e a fuga."
         );
         btnLoop.addActionListener(e -> abrirCenaLoop());
 

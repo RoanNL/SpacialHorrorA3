@@ -13,20 +13,6 @@ import com.jogamp.opengl.GL4;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 
-/**
- * Animação em loop "Spacial Horror" *
- *
- *  1. Um buraco de hiperespaço se abre e a nave sai dele, num sistema solar.
- *  2. A nave passa pelos três planetas (bem maiores que ela) e para diante do Sol, maior que todos.
- *  3. A criatura se forma no meio das estrelas e devora o Sol.
- *  4. No escuro, a criatura avança sobre a nave; outro buraco se abre e a nave foge pelo hiperespaço.
- *
- * O ciclo começa e termina DENTRO do túnel do hiperespaço, que cobre a tela inteira:
- * o último quadro é idêntico ao primeiro, então o loop se repete sem emenda.
- *
- * Tudo é função do tempo em segundos dentro do ciclo. Para mudar o ritmo, ajuste as constantes T_*.
- * Para começar do meio (útil enquanto ajusta), rode com -Dinicio=40 (segundos).
- */
 public class AnimacaoLoop implements GLEventListener {
 
     // ======================= ROTEIRO (segundos) =======================
@@ -256,10 +242,6 @@ public class AnimacaoLoop implements GLEventListener {
     }
 
     /**
-     * Separa os triângulos da mandíbula (gengiva de baixo e dentes de baixo) do resto da criatura,
-     * para poder abrir a boca. Usa só os dados que o OBJLoader devolve: posição e cor de cada vértice.
-     * A mandíbula fica na frente da cabeça (z > 11,4), abaixo da boca (y < 0,4) e tem cor de gengiva
-     * (vermelho maior que verde) ou de dente (claro); a pele ao redor é verde-azulada escura.
      * @return [0] = corpo, [1] = mandíbula
      */
     private static float[][] separarMandibula(float[] dados) {
